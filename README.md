@@ -2,10 +2,10 @@
 A group of python programs that simulate some physical phenomenon's such as gravitaty, springs and random particle movements. I wrote those programs in my free time and 
 they may not be very accurate or well optimized. Most simulations containt plots and animations. Below is a brief description of each program:
 
-# Sim.py
+## Sim.py
 Basically the main library where all the functions and classes are written. All other scripts use this file.
 
-# Gravitation.py
+### Gravitation.py
 Simulation of two massive objects attracted through gravity. Includes a simple animation.
 
 # Single_spring.py
