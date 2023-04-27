@@ -1,5 +1,5 @@
 # PhysicsSimulation
-A group of python programs that simulate some physical phenomenon's such as gravitaty, springs and random particle movements. I wrote those programs in my free time and 
+A group of python programs that simulate some physical phenomenon's such as gravity, springs and elastic collisions. I wrote those programs in my free time and 
 they may not be very accurate or well optimized. Most simulations containt plots and animations. Below is a brief description of each program:
 
 ### Sim.py
