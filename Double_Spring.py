@@ -3,7 +3,7 @@ import numpy as np
 import math as mt
 from matplotlib.animation import FuncAnimation
 import matplotlib.animation as animation
-from Sim import Force_Field,particle,Gravity_source,spring,rigid_circle
+from Sim import Force_Field,particle,spring,rigid_circle
 
 dr = 0.1
 grid_x = 1000

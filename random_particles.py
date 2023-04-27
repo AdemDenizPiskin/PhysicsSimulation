@@ -3,7 +3,7 @@ import numpy as np
 import math as mt
 from matplotlib.animation import FuncAnimation
 import matplotlib.animation as animation
-from Sim import Force_Field,particle,Gravity_source,spring,rigid_circle,elastic_collision_handler,did_collide,calculate_elastic_collision
+from Sim import Force_Field,particle,spring,rigid_circle,elastic_collision_handler,did_collide,calculate_elastic_collision
 
 dr = 0.1
 grid_x = 1000
@@ -14,14 +14,14 @@ particle_num = 100
 init_pos = np.random.rand(particle_num,2)*grid_x*dr
 init_vel = np.random.rand(particle_num,2)*15
 
-particles = [rigid_circle(init_pos[i],init_vel[i],1,1,x_max,y_max) for i in range(particle_num)]
+particles = [rigid_circle(init_pos[i],init_vel[i],1,1,x_max,y_max,1) for i in range(particle_num)]
 
 dt = 0.01
 N = 1000
 path = [ [[0 for _ in range(N)], [0 for _ in range(N)]] for _ in range(particle_num)]
 
 for i in range(N):
-    print(i)
+    print("Loading {0}%".format(100*i/N))
     elastic_collision_handler(particles)
     for j in range(particle_num):
         path[j][0][i] = particles[j].pos[0]

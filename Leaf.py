@@ -9,8 +9,8 @@ dr = 0.1
 grid_x = 1000
 grid_y = 1000
 g = 9.81
-x_0 = np.array([50,50])
-v_0 = 0*np.array([12,16])
+x_0 = np.array([49,49])
+v_0 = np.array([12,16])
 m1 = 5
 xmax = (grid_x-1)*dr
 ymax = (grid_y-1)*dr
@@ -19,7 +19,7 @@ spring1_pos = np.array([50,50])
 particle1 = particle(x_0,v_0,m1,xmax,ymax,0.8)
 #particle2 = particle([50,50],[0,0],3,99.9,99.9)
 
-spring1 = spring(spring1_pos,10,0.2,2)
+spring1 = spring(spring1_pos,35,0.2,2)
 dt = 0.01
 N = 10000
 path1 = [[0 for _ in range(N)], [0 for _ in range(N)]]
@@ -27,8 +27,11 @@ wind1 = [[0,0] for _ in range(N)]
 F_wind = 2*m1*(3*np.ones(2))
 on_tree =True
 l_max =10
+i_flag=N
+
 #path2 = [[0 for _ in range(N)], [0 for _ in range(N)]]
 for i in range(N):
+
     path1[0][i] = particle1.pos[0]
     path1[1][i] = particle1.pos[1]
     #path2[0][i] = particle2.pos[0]
@@ -44,9 +47,12 @@ for i in range(N):
     F_s = -0.1*particle1.vel*np.abs(particle1.vel)
     if(on_tree):
         F_l = spring1.calc_force(particle1.pos,particle1.vel)
+
     else:
         F_l=np.array([0,-m1*g])
+
     particle1.update_F(F_wind+F_l+F_s)
+
     #elastic_collision_handler([particle1,particle2])
     particle1.move(dt)
     #particle2.move(dt)
@@ -114,14 +120,6 @@ def animate(i):
 ani = FuncAnimation(
     fig, animate, interval=0, frames=np.arange(1,N))
 
-# To save the animation, use e.g.
-#
-# ani.save("movie.mp4")
-#
-# or
-#
-# writer = animation.FFMpegWriter(
-#     fps=15, metadata=dict(artist='Me'), bitrate=1800)
-# ani.save("movie.mp4", writer=writer)
+
 
 plt.show()

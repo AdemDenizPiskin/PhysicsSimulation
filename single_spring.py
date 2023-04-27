@@ -72,7 +72,7 @@ x = path[0]# np.arange(0, 2*np.pi, 0.01)
 y = path[1]
 line, = ax.plot([0,x[0]], [50,y[0]],'b', marker='o', linestyle='dashed')
 
-
+line2, = ax.plot([40,40],[0,100],'r', linestyle='dashed')
 
 def animate(i):
 
