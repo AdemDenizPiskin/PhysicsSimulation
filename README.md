@@ -8,7 +8,7 @@ Basically the main library where all the functions and classes are written. All 
 ### Gravitation.py
 Simulation of two massive objects attracted through gravity. Includes a simple animation.
 
-# Single_spring.py
+#### Single_spring.py
 A basic animation and plot of a linear spring oscillating
 
 
